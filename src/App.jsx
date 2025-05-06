@@ -7,8 +7,8 @@ import Home from "./pages/Home";
 import { CartProvider } from "./pages/CartContext";
 import { ToastContainer } from "react-toastify";
 import Cart from "./components/Cart";
-import Signup from "./pages/SignUp";
 import Login from "./pages/Login";
+import SignUp from "./pages/Signup";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/viewcart" element={<Cart />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={<SignUp />} />
             <Route path="/" element={<Home />} />
           </Routes>
         </BrowserRouter>
