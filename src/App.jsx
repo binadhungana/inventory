@@ -1,22 +1,28 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
 
-import { BrowserRouter, Route } from 'react-router-dom'
-import './App.css'
-import { Button } from './components/ui/button'
-import Navbar from './components/Navbar'
-import Product from './components/Product'
-import ProductList from './components/Productlist'
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
+import { CartProvider } from "./pages/CartContext";
+import { ToastContainer } from "react-toastify";
+import Cart from "./components/Cart";
 
 function App() {
- 
-
   return (
     <>
-     <BrowserRouter>
-     <Navbar/>
-     </BrowserRouter>
-     <ProductList/>
+      <CartProvider>
+        <BrowserRouter>
+          <Navbar />
+          <ToastContainer position="top-center" />
+          <Routes>
+            <Route path="/viewcart" element={<Cart />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
